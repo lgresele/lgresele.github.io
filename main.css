@@ -20,11 +20,17 @@ html {
   background: white;
 }
 body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 100vh;
+  min-height: 100svh;
   margin: 0;
   padding: clamp(1.75rem, 5vh, 3.5rem) clamp(1.1rem, 4vw, 32px);
   line-height: 1.6;
 }
 main {
+  width: 100%;
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
@@ -44,13 +50,19 @@ a:focus-visible { outline: 2px solid #1565c0; outline-offset: 3px; }
   margin: 0 auto;
   border-radius: 50%;
 }
+.site-footer {
+  width: 100%;
+  max-width: 600px;
+  margin: auto auto 0;
+  padding-top: 1.2rem;
+}
 .icons {
   display: flex;
   justify-content: center;
   gap: 16px;
   list-style: none;
   padding: 0;
-  margin: 1em 0 .45em;
+  margin: 0;
 }
 .icons a {
   display: grid;
@@ -66,6 +78,7 @@ a:focus-visible { outline: 2px solid #1565c0; outline-offset: 3px; }
 .icons a:hover img, .icons a:focus-visible img {
   filter: invert(30%) sepia(86%) saturate(1093%) hue-rotate(179deg);
 }
+.site-header { margin: 0 auto 1.25rem; }
 .page-links {
   display: flex;
   justify-content: center;
@@ -73,6 +86,16 @@ a:focus-visible { outline: 2px solid #1565c0; outline-offset: 3px; }
   gap: .35rem 1.25rem;
   flex-wrap: wrap;
   font-size: .95rem;
+}
+.page-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.page-links a[aria-current="page"] {
+  color: #101010;
+  text-decoration: underline;
+  text-underline-offset: .25em;
 }
 .opening {
   margin-top: 1.6rem;
@@ -84,7 +107,16 @@ a:focus-visible { outline: 2px solid #1565c0; outline-offset: 3px; }
 .projects span { display: block; }
 .inner-page { padding-top: 1rem; }
 .inner-page h1 { margin-bottom: .65em; }
-.inner-page .page-links { margin-top: 1.25em; }
+.talk { margin-top: 1.65rem; }
+.talk-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 1rem auto 0;
+  background: #111;
+}
+.recording-links { font-size: .9rem; }
+.talk h2 { font-size: 1.15rem; }
 
 @media (max-width: 32rem) {
   body { padding-top: 1.35rem; }
